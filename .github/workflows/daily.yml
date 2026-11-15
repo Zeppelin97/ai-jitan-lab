@@ -65,8 +65,9 @@ jobs:
           MEDIA_BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}
         run: python3 scripts/publish_instagram.py --max ${{ vars.POSTS_PER_RUN || 1 }}
 
-      - name: Commit publish results
+      - name: Commit publish results (+ リンク集の出典を更新)
         if: always()
         run: |
+          python3 scripts/build_links.py
           git add -A && git diff --cached --quiet || git commit -m "publish: results $(date +%F)"
           git push
