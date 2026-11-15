@@ -26,6 +26,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 QUEUE = ROOT / "content/queue"
 JST = dt.timezone(dt.timedelta(hours=9))
+BRAND_REEL = json.loads((ROOT / "config/brand.json").read_text(encoding="utf-8")).get("reel", {})
 
 # トークンの種類で接続先を自動判定: "IG" で始まる = Instagramユーザートークン（graph.instagram.com）
 #                                  それ以外 = 統合ログイン/システムユーザートークン（graph.facebook.com）
@@ -78,11 +79,59 @@ def due_posts():
 
 def build_caption(p):
     tags = " ".join(p.get("hashtags", [])[:5])
-    return f"{p['caption']}\n\n{tags}".strip()
+    cap = f"{p['caption']}\n\n{tags}".strip()
+    credit = (p.get("reel") or {}).get("credit") or BRAND_REEL.get("credit")
+    if p.get("format") == "reel" and (p.get("reel") or {}).get("engine") == "voicevox" and credit:
+        cap += f"\n\n{credit}"  # VOICEVOX の利用規約に基づくクレジット表記
+    return cap
+
+
+def upload_reel(ig, d, rel, base, caption):
+    """リールを作成。まず動画を直接アップロード（resumable）し、だめなら公開URL経由。"""
+    video = d / "reel.mp4"
+    params = {"media_type": "REELS", "caption": caption, "share_to_feed": "true"}
+    if (d / "reel-cover.png").exists() and base:
+        params["cover_url"] = f"{base}/{rel}/reel-cover.png"
+    try:
+        c = api("POST", f"{ig}/media", upload_type="resumable", **params)
+        uri = c.get("uri")
+        if not uri:
+            raise RuntimeError("uri が返らない")
+        data = video.read_bytes()
+        req = urllib.request.Request(uri, data=data, method="POST", headers={
+            "Authorization": f"OAuth {os.environ['IG_ACCESS_TOKEN']}",
+            "offset": "0", "file_size": str(len(data))})
+        with urllib.request.urlopen(req, timeout=300) as r:
+            r.read()
+        return c["id"]
+    except Exception as e:  # noqa: BLE001
+        print(f"  resumable upload 不可（{str(e)[:120]}）→ video_url で再試行", file=sys.stderr)
+        return api("POST", f"{ig}/media", video_url=f"{base}/{rel}/reel.mp4", **params)["id"]
+
+
+def finish(pj, p, container_id):
+    wait_ready(container_id, timeout=600)
+    media_id = api("POST", f"{os.environ['IG_USER_ID']}/media_publish", creation_id=container_id)["id"]
+    link = api("GET", media_id, fields="permalink").get("permalink")
+    p["status"] = "published"
+    p["published"] = {"media_id": media_id, "at": dt.datetime.now(JST).isoformat(), "permalink": link}
+    pj.write_text(json.dumps(p, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"published {pj.parent.name} -> {link}")
 
 
 def publish(pj: Path, p: dict, dry: bool):
     d = pj.parent
+    if p.get("format") == "reel":
+        rel = d.relative_to(ROOT).as_posix()
+        base = os.environ.get("MEDIA_BASE_URL", "").rstrip("/")
+        if not (d / "reel.mp4").exists():
+            raise RuntimeError(f"{d.name}: reel.mp4 がありません（render_reel.py を先に実行）")
+        caption = build_caption(p)
+        if dry:
+            print(f"[dry-run] {d.name} (REELS)\n  video: {d / 'reel.mp4'}\n  caption:\n{caption}\n")
+            return
+        finish(pj, p, upload_reel(os.environ["IG_USER_ID"], d, rel, base, caption))
+        return
     slides = sorted(d.glob("slide-*.png"))
     if not 2 <= len(slides) <= 10:
         raise RuntimeError(f"{d.name}: スライド数 {len(slides)}（2〜10枚が必要。render_carousel.py を先に実行）")
@@ -101,14 +150,7 @@ def publish(pj: Path, p: dict, dry: bool):
     for c in children:
         wait_ready(c)
     carousel = api("POST", f"{ig}/media", media_type="CAROUSEL", children=",".join(children), caption=caption)
-    wait_ready(carousel["id"])
-    res = api("POST", f"{ig}/media_publish", creation_id=carousel["id"])
-    media_id = res["id"]
-    link = api("GET", media_id, fields="permalink").get("permalink")
-    p["status"] = "published"
-    p["published"] = {"media_id": media_id, "at": dt.datetime.now(JST).isoformat(), "permalink": link}
-    pj.write_text(json.dumps(p, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"published {d.name} -> {link}")
+    finish(pj, p, carousel["id"])
 
 
 def main():

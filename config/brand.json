@@ -71,5 +71,12 @@
       "もしもアフィリエイト / A8.net（転職・キャリア支援、学習サービス）"
     ],
     "disclosure_tag": "【PR】"
+  },
+  "reel": {
+    "speaker": 2,
+    "speed": 1.15,
+    "credit": "VOICEVOX:四国めたん",
+    "default_format": "reel",
+    "carousel_per_week": 2
   }
 }

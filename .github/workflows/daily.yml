@@ -10,14 +10,18 @@ concurrency: instagram-ops
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
+    services:
+      voicevox:   # ナレーション用の音声合成エンジン（無料・クレジット表記で商用可）
+        image: voicevox/voicevox_engine:cpu-latest
+        ports: ["50021:50021"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - name: Install deps & Japanese fonts
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk
+          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk ffmpeg
           pip install -q -r requirements.txt
 
       # AI社員たちがネタ補充・原稿・審査・画像化を行う（公開はしない）
@@ -33,10 +37,13 @@ jobs:
             --max-turns 60
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Task,Bash(python3 scripts/*)"
 
-      - name: Render any un-rendered approved posts
+      - name: Render any un-rendered approved posts (carousel / reel)
         run: |
           for d in content/queue/*/; do
-            if grep -q '"status": "ready"' "$d/post.json" && ! ls "$d"slide-*.png >/dev/null 2>&1; then
+            grep -q '"status": "ready"' "$d/post.json" || continue
+            if grep -q '"format": "reel"' "$d/post.json"; then
+              [ -f "$d/reel.mp4" ] || python3 scripts/render_reel.py "$d"
+            elif ! ls "$d"slide-*.png >/dev/null 2>&1; then
               python3 scripts/render_carousel.py "$d"
             fi
           done

@@ -25,3 +25,12 @@ tools: Read, Write, Edit, Glob
 - alt_text: スライド内容の要約（80〜150文字）
 - 声のトーンは `config/brand.json` の voice に従う
 - リサーチの sources をそのまま `sources` に入れる
+
+## リール台本（format が "reel" の投稿は必須）
+`reel.scenes` に5シーン前後、合計20〜30秒（ナレーション合計 約150〜200文字）で書く。
+- hook: 問いを1〜2秒で（text は13文字×3行以内、chip に効果名）
+- data: 実験の数字（count_to＋suffix でカウントアップ、または big）。note に出典
+- text ×2: 仕組み → 対処法（text は1行13文字前後×3行以内）
+- cta: 「当てはまる人に送ってあげて」系
+- say はナレーション原稿。読み間違えやすい語は ひらがな/カタカナ にする（例: 2〜3割 → 2割から3割）
+- 既定は format="reel"。週2回（config/brand.json の reel.carousel_per_week）は format="carousel" で保存向けのまとめを作る

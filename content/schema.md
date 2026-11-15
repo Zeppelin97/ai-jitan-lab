@@ -4,6 +4,7 @@
 {
   "id": "2026-11-16-chatgpt-mail",
   "scheduled_for": "2026-11-16",
+  "format": "reel | carousel",
   "pillar": "コピペで使えるAIプロンプト",
   "keyword": "ChatGPT メール 時短",
   "slides": [
@@ -28,3 +29,15 @@
 - body の本文は 1 スライド 90 文字以内、code は 120 文字以内
 - ハッシュタグは 3〜5 個（Instagram の上限変更に対応して少数精鋭）
 - `is_pr: true` のときはキャプション冒頭と cover の subtitle に `【PR】` を入れる
+
+## リール台本（format: "reel"）
+```json
+"reel": {"scenes": [
+  {"kind": "hook", "text": "なぜ会議では\n誰も発言\nしないのか？", "chip": "社会的手抜き", "say": "なぜ会議では、誰も発言しないのか？"},
+  {"kind": "data", "heading": "8人で綱を引くと…", "count_to": 49, "suffix": "%", "text": "1人あたりの力は\n単独のときの約半分", "note": "Ringelmann（Moede, 1927）", "say": "…"},
+  {"kind": "text", "heading": "対処法", "text": "…", "say": "…"},
+  {"kind": "cta", "text": "会議の進行役に\n送ってあげて", "sub": "…", "say": "…"}
+]}
+```
+- 生成物: reel.mp4（1080×1920）、reel-cover.png、reel-preview.png
+- VOICEVOX で作った音声は、公開時にキャプション末尾へクレジット（config/brand.json の reel.credit）が自動で入る
