@@ -1,0 +1,30 @@
+# 毎朝 8:15 JST: 前夜の投稿の初速とアカウント全体の数値を取得してコミットする（9時の朝報告で使う）
+name: morning-check
+on:
+  schedule:
+    - cron: "15 23 * * *"   # 23:15 UTC = 8:15 JST
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: instagram-ops
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Fetch account stats and post insights
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: |
+          python3 scripts/fetch_account.py
+          python3 scripts/fetch_insights.py
+      - name: Commit
+        run: |
+          git config user.name "autogram-bot"
+          git config user.email "autogram-bot@users.noreply.github.com"
+          git add -A && git diff --cached --quiet || git commit -m "data: morning check $(date +%F)"
+          git push

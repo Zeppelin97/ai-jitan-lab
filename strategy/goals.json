@@ -1,0 +1,13 @@
+{
+  "_説明": "現在のフェーズの目標。scripts/progress.py がこれを読んで進捗率を計算する。フェーズが終わったら CEO が次のフェーズに書き換える",
+  "phase": "フェーズ1：データを貯めて勝ちパターンを見つける",
+  "start": "2026-11-16",
+  "end": "2026-12-15",
+  "goals": [
+    {"id": "followers", "label": "フォロワー数", "target": 1000, "unit": "人", "weight": 0.4},
+    {"id": "posts", "label": "公開した投稿数", "target": 30, "unit": "本", "weight": 0.2},
+    {"id": "share_rate", "label": "直近7本の平均シェア率", "target": 0.01, "unit": "率", "weight": 0.2},
+    {"id": "winning_patterns", "label": "見つけた勝ちパターン", "target": 2, "unit": "個", "weight": 0.2}
+  ],
+  "winning_patterns_found": 0
+}
