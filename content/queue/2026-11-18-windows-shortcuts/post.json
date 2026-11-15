@@ -1,0 +1,61 @@
+{
+  "id": "2026-11-18-windows-shortcuts",
+  "scheduled_for": "2026-11-18",
+  "pillar": "Excel/スプレッドシート/PC時短ワザ",
+  "keyword": "Windows ショートカット 便利",
+  "slides": [
+    {
+      "type": "cover",
+      "title": "まだ使ってない？\nWindowsの\n神ショートカット",
+      "subtitle": "Windows 10/11対応"
+    },
+    {
+      "type": "body",
+      "heading": "Win + V",
+      "body": "クリップボード履歴。過去にコピーした内容を一覧から選んで貼り付けられます。初回は画面の案内でオンにすればOK。"
+    },
+    {
+      "type": "body",
+      "heading": "Win + Shift + S",
+      "body": "画面の一部を切り取ってスクショ。範囲を選ぶだけでコピーされ、そのまま貼り付けできます。"
+    },
+    {
+      "type": "body",
+      "heading": "Win + .（ピリオド）",
+      "body": "絵文字・記号パネルを開く。チャットや資料に記号を入れたい時に探す手間がゼロに。"
+    },
+    {
+      "type": "body",
+      "heading": "Win + D",
+      "body": "一瞬でデスクトップを表示。もう一度押すと元のウィンドウに戻ります。"
+    },
+    {
+      "type": "cta",
+      "title": "保存して\n明日から使おう",
+      "body": "毎日20時に\n仕事の時短ワザを投稿中"
+    }
+  ],
+  "caption": "Windowsの便利ショートカット4選💻\n\n・Win+V　クリップボード履歴\n・Win+Shift+S　範囲スクショ\n・Win+.　絵文字・記号\n・Win+D　デスクトップ表示\n\n特にWin+Vは一度使うと戻れません。\n保存して試してみてね。",
+  "hashtags": [
+    "#Windows",
+    "#ショートカットキー",
+    "#仕事効率化",
+    "#PC時短"
+  ],
+  "alt_text": "Windows 10と11で使える便利なショートカット4つ。Win+Vでクリップボード履歴、Win+Shift+Sで範囲スクリーンショット、Win+ピリオドで絵文字パネル、Win+Dでデスクトップ表示。",
+  "sources": [
+    "https://support.microsoft.com/ja-jp/windows/windows-のキーボード-ショートカット-dcc61a57-8ff0-cffe-9796-cb9706c75eec"
+  ],
+  "is_pr": false,
+  "ai_label_required": false,
+  "compliance": {
+    "status": "approved",
+    "notes": "各キーは Microsoft 公式一覧と一致。『神』は口語的な強調で、効果の誇大な主張ではない。"
+  },
+  "status": "ready",
+  "published": {
+    "media_id": null,
+    "at": null,
+    "permalink": null
+  }
+}

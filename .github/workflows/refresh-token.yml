@@ -1,0 +1,24 @@
+# "IG" で始まる Instagram ユーザートークン（60日有効）を月2回延長し、Secret を自動更新する。
+# システムユーザートークン（無期限）の場合は何もしない。
+name: refresh-token
+on:
+  schedule:
+    - cron: "0 1 1,15 * *"
+  workflow_dispatch:
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refresh and store
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}   # 対象リポジトリの Secrets: Read and write 権限を持つ fine-grained PAT
+        run: |
+          case "$IG_ACCESS_TOKEN" in
+            IG*) ;;
+            *) echo "無期限トークンのため更新不要"; exit 0 ;;
+          esac
+          NEW=$(python3 scripts/refresh_token.py)
+          echo "::add-mask::$NEW"
+          gh secret set IG_ACCESS_TOKEN --body "$NEW" --repo "${{ github.repository }}"

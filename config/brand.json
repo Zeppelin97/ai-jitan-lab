@@ -1,0 +1,44 @@
+{
+  "account": {
+    "handle": "@matrix.neo1989",
+    "display_name": "AI時短ラボ｜仕事が30分早く終わる",
+    "bio": "会社員のための AI・時短ツール活用術\n▶ 保存して明日から使える小ワザを毎日\n▶ 無料で使えるツールだけ厳選\n↓ おすすめツールまとめ",
+    "language": "ja"
+  },
+  "niche": {
+    "theme": "会社員向け AI・時短ツール活用術",
+    "why": "顔出し不要・テキストカルーセルで完結・保存されやすい・アフィリエイト単価が高い（SaaS/ガジェット/書籍）・企業PR案件が多い",
+    "audience": "20〜40代の会社員。残業を減らしたい、AIを仕事で使いたいが何から始めればいいか分からない人",
+    "pillars": [
+      {"name": "コピペで使えるAIプロンプト", "share": 0.35},
+      {"name": "無料ツール・機能の発見", "share": 0.25},
+      {"name": "Excel/スプレッドシート/PC時短ワザ", "share": 0.20},
+      {"name": "比較・ランキング・まとめ", "share": 0.15},
+      {"name": "PR/おすすめ（アフィリエイト）", "share": 0.05}
+    ]
+  },
+  "voice": {
+    "tone": "やさしい先輩。断定しすぎず、具体的。絵文字は1スライド1個まで",
+    "do": ["数字で効果を示す（ただし出典か自分の検証のみ）", "1スライド1メッセージ", "最後は保存を促す"],
+    "dont": ["煽り（知らないと損、ヤバい連発）", "誇大表現（絶対・必ず稼げる）", "他人のコンテンツの丸写し"]
+  },
+  "design": {
+    "size": [1080, 1350],
+    "bg": "#F7F5F0",
+    "text": "#1E1E1E",
+    "accent": "#FF6B35",
+    "sub": "#6B6B6B",
+    "cover_bg": "#1E1E1E",
+    "cover_text": "#FFFFFF"
+  },
+  "schedule": {
+    "posts_per_day": 1,
+    "queue_buffer": 3,
+    "post_time_jst": "20:00"
+  },
+  "monetization": {
+    "link_in_bio": "TODO: lit.link / note / ブログのURL（人間が設定）",
+    "affiliate_programs": ["Amazonアソシエイト", "もしもアフィリエイト", "A8.net", "各SaaSの紹介プログラム"],
+    "disclosure_tag": "【PR】"
+  }
+}

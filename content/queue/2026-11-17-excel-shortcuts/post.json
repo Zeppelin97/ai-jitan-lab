@@ -1,0 +1,66 @@
+{
+  "id": "2026-11-17-excel-shortcuts",
+  "scheduled_for": "2026-11-17",
+  "pillar": "Excel/スプレッドシート/PC時短ワザ",
+  "keyword": "Excel ショートカット 時短",
+  "slides": [
+    {
+      "type": "cover",
+      "title": "知ってると\n差がつく\nExcel時短キー5選",
+      "subtitle": "Windows版・保存推奨"
+    },
+    {
+      "type": "body",
+      "heading": "Ctrl + E",
+      "body": "フラッシュフィル。1行目だけ手入力すると、残りをパターンから自動で埋めてくれます。氏名の分割や結合に便利。"
+    },
+    {
+      "type": "body",
+      "heading": "Alt + =",
+      "body": "オートSUM。合計を出したいセルで押すと、上や左の数値を範囲にしたSUM（合計）の式が一瞬で入ります。"
+    },
+    {
+      "type": "body",
+      "heading": "Ctrl + ;（セミコロン）",
+      "body": "今日の日付を入力。日報や管理表の日付入力がワンタッチになります。"
+    },
+    {
+      "type": "body",
+      "heading": "Ctrl + Shift + L",
+      "body": "フィルターのオン/オフを切り替え。表の見出しを選んで押すだけで絞り込みができます。"
+    },
+    {
+      "type": "body",
+      "heading": "Ctrl + 1",
+      "body": "「セルの書式設定」を開く。表示形式・罫線・配置の変更はここから最短で。"
+    },
+    {
+      "type": "cta",
+      "title": "保存して\n手元に置こう",
+      "body": "毎日20時に\n仕事の時短ワザを投稿中"
+    }
+  ],
+  "caption": "Excelの時短ショートカット5選⌨️\n\n・Ctrl+E　フラッシュフィル\n・Alt+=　合計(SUM)\n・Ctrl+;　今日の日付\n・Ctrl+Shift+L　フィルター\n・Ctrl+1　セルの書式設定\n\nWindows版Excelのキーです。\n保存して、作業中に見返してね。",
+  "hashtags": [
+    "#Excel",
+    "#エクセル時短",
+    "#仕事効率化",
+    "#ショートカットキー"
+  ],
+  "alt_text": "Windows版Excelで使える時短ショートカット5つ。Ctrl+Eのフラッシュフィル、Alt+イコールのオートSUM、Ctrl+セミコロンで今日の日付、Ctrl+Shift+Lでフィルター、Ctrl+1でセルの書式設定。",
+  "sources": [
+    "https://support.microsoft.com/ja-jp/office/excel-のキーボード-ショートカット-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  ],
+  "is_pr": false,
+  "ai_label_required": false,
+  "compliance": {
+    "status": "approved",
+    "notes": "スライド3の見出しが誤記（Alt+Shift+=）だったため Alt+= に修正。各キーは Microsoft 公式のショートカット一覧と一致。"
+  },
+  "status": "ready",
+  "published": {
+    "media_id": null,
+    "at": null,
+    "permalink": null
+  }
+}
