@@ -14,10 +14,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from publish_instagram import JST, QUEUE, ROOT, api  # noqa: E402
 
-METRICS = os.environ.get("IG_METRICS", "reach,views,saved,shares,likes,comments,follows").split(",")
+METRICS = os.environ.get("IG_METRICS", "reach,views,saved,shares,likes,comments,follows,ig_reels_avg_watch_time,ig_reels_video_view_total_time").split(",")
 CSV = ROOT / "data/insights.csv"
-COLS = ["post_id", "pillar", "keyword", "media_id", "fetched_at"] + [
-    "reach", "views", "saved", "shares", "likes", "comments", "follows"]
+COLS = ["post_id", "pillar", "keyword", "format", "duration_sec", "media_id", "fetched_at"] + [
+    "reach", "views", "saved", "shares", "likes", "comments", "follows",
+    "ig_reels_avg_watch_time", "ig_reels_video_view_total_time"]
+BASE_COLS = 7
 
 
 def fetch(media_id):
@@ -45,7 +47,13 @@ def main():
             continue
         vals = fetch(mid)
         rows.append({"post_id": p["id"], "pillar": p.get("pillar", ""), "keyword": p.get("keyword", ""),
-                     "media_id": mid, "fetched_at": now, **{k: vals.get(k, "") for k in COLS[5:]}})
+                     "format": p.get("format", "carousel"), "duration_sec": (p.get("reel") or {}).get("duration_sec", ""),
+                     "media_id": mid, "fetched_at": now, **{k: vals.get(k, "") for k in COLS[BASE_COLS:]}})
+    if not CSV.exists() or CSV.read_text(encoding="utf-8").splitlines()[0].split(",") != COLS:
+        old = CSV.read_text(encoding="utf-8").splitlines()[1:] if CSV.exists() else []
+        CSV.write_text(",".join(COLS) + "\n", encoding="utf-8")  # 列が増えたので見出しを更新（旧データは無し）
+        if old:
+            print(f"注意: 旧形式の {len(old)} 行は破棄しました", file=sys.stderr)
     with CSV.open("a", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=COLS)
         w.writerows(rows)

@@ -112,5 +112,9 @@
     ],
     "engine": "voicevox",
     "duration_sec": 24.9
+  },
+  "experiment": {
+    "id": "exp1-hook",
+    "variant": "A"
   }
 }

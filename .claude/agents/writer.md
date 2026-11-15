@@ -34,3 +34,7 @@ tools: Read, Write, Edit, Glob
 - cta: 「当てはまる人に送ってあげて」系
 - say はナレーション原稿。読み間違えやすい語は ひらがな/カタカナ にする（例: 2〜3割 → 2割から3割）
 - 既定は format="reel"。週2回（config/brand.json の reel.carousel_per_week）は format="carousel" で保存向けのまとめを作る
+
+## 実験の記録（必須）
+`strategy/playbook.md` の「実験」を読み、今回の投稿がどのパターンか `experiment` に記録する。
+例: `"experiment": {"id": "exp1-hook", "variant": "B"}`。ローテーション順はプレイブックに従う。
