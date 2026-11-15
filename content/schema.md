@@ -8,7 +8,8 @@
   "keyword": "ChatGPT メール 時短",
   "slides": [
     {"type": "cover", "title": "メール返信が\n3秒で終わる\nChatGPTの使い方", "subtitle": "コピペOKのプロンプト付き"},
-    {"type": "body", "heading": "① 丁寧に断る", "body": "本文…", "code": "（任意）コピペ用プロンプト"},
+    {"type": "body", "heading": "① 丁寧に断る", "body": "本文…", "code": "（任意）コピペ用の文", "note": "（任意）出典の短縮表記"},
+    {"type": "data", "big": "49%", "label": "8人で引くと、1人あたりの力は\n単独のときの約半分", "note": "Ringelmann（Moede, 1927の報告）"},
     {"type": "cta", "title": "保存して\n明日から使おう", "body": "毎日20時に時短ワザを投稿中"}
   ],
   "caption": "1行目に検索キーワードを含める。改行で読みやすく。最後に保存/シェアの一言。",

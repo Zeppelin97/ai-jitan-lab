@@ -1,0 +1,79 @@
+{
+  "id": "2026-11-16-social-loafing",
+  "scheduled_for": "2026-11-16",
+  "pillar": "職場の「なぜ？」（上司・同僚・会議）",
+  "keyword": "会議 発言しない 心理",
+  "slides": [
+    {
+      "type": "cover",
+      "title": "なぜ会議では\n誰も発言\nしないのか？",
+      "subtitle": "社会的手抜きの心理学"
+    },
+    {
+      "type": "body",
+      "heading": "こんな経験ない？",
+      "body": "「何か意見ある人？」と聞かれても、シーン…。1対1なら話せる人も、大人数になると黙ってしまう。実はこれ、性格ではなく人数の問題かもしれません。"
+    },
+    {
+      "type": "data",
+      "heading": "8人で綱を引くと…",
+      "big": "49%",
+      "label": "1人あたりの力は\n単独のときの約半分に",
+      "note": "Ringelmannの綱引き実験（Moede, 1927の報告）"
+    },
+    {
+      "type": "body",
+      "heading": "綱引きの実験",
+      "body": "フランスの農業技術者リンゲルマンは、綱を引く人数を増やして力を測りました。2人だと1人あたり93%、3人だと85%、8人だと49%。人が増えるほど、1人分の力は下がっていきました。",
+      "note": "Kravitz & Martin, 1986"
+    },
+    {
+      "type": "body",
+      "heading": "なぜ起きるのか",
+      "body": "人数が多いと「自分がやらなくても誰かがやる」「自分の貢献は見えにくい」と感じやすくなります。後の研究では、拍手や声出しでも同じ傾向が確認され「社会的手抜き」と呼ばれています。",
+      "note": "Latané, Williams & Harkins, 1979"
+    },
+    {
+      "type": "body",
+      "heading": "対処法① 名指しで聞く",
+      "body": "「何かある人？」ではなく「〇〇さんはどう思う？」と、1人に聞く。責任が1人に向くと、意見が出やすくなります。"
+    },
+    {
+      "type": "body",
+      "heading": "対処法② 役割を見える化",
+      "body": "会議の前に「Aさんは懸念点、Bさんは代案を1つ」のように担当を決める。自分の貢献が見えると、手抜きは起きにくくなります。"
+    },
+    {
+      "type": "cta",
+      "title": "当てはまる人に\n送ってあげて",
+      "body": "職場と人間関係の「なぜ？」を\n毎日20時に心理学で解説中"
+    }
+  ],
+  "caption": "会議で誰も発言しない理由は「社会的手抜き」かもしれません。\n\n綱引きの実験では、8人で引くと1人あたりの力は単独の約半分に。\n人が増えるほど「誰かがやるだろう」が起きやすくなります。\n\n対処法は\n①名指しで聞く\n②役割を見える化する\n\n会議の進行役の人に送ってあげてください。",
+  "hashtags": [
+    "#心理学",
+    "#社会的手抜き",
+    "#会議",
+    "#職場の人間関係",
+    "#仕事術"
+  ],
+  "alt_text": "なぜ会議では誰も発言しないのかを、リンゲルマンの綱引き実験と社会的手抜きの研究で解説。8人で綱を引くと1人あたりの力は単独の約半分になる。対処法は名指しで聞くことと役割の見える化。",
+  "sources": [
+    "https://sk.sagepub.com/ency/edvol/embed/processes/chpt/ringelmann-effect",
+    "https://mason.gmu.edu/~dkravitz/Pubs/JPSPv50p936.htm",
+    "https://kirkwood.pressbooks.pub/emcworthy/chapter/confronting-and-preventing-social-loafing/",
+    "Latané, B., Williams, K., & Harkins, S. (1979). Journal of Personality and Social Psychology, 37(6), 822–832."
+  ],
+  "is_pr": false,
+  "ai_label_required": false,
+  "compliance": {
+    "status": "approved",
+    "notes": "93/85/49%はMoede(1927)によるRingelmannの報告として複数ソースで一致。出典表記もその旨にした。Latané(1979)は定性的な記述のみ。診断・レッテル貼りなし。"
+  },
+  "status": "ready",
+  "published": {
+    "media_id": null,
+    "at": null,
+    "permalink": null
+  }
+}

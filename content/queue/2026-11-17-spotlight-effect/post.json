@@ -1,0 +1,77 @@
+{
+  "id": "2026-11-17-spotlight-effect",
+  "scheduled_for": "2026-11-17",
+  "pillar": "自分の心のクセ（認知バイアス）",
+  "keyword": "人の目が気になる 心理",
+  "slides": [
+    {
+      "type": "cover",
+      "title": "なぜ人の目が\nこんなに\n気になるのか？",
+      "subtitle": "スポットライト効果"
+    },
+    {
+      "type": "body",
+      "heading": "こんな経験ない？",
+      "body": "寝ぐせ、服のシミ、会議での言い間違い。「みんなに見られた」「絶対変に思われた」と、1日中気になってしまう。"
+    },
+    {
+      "type": "data",
+      "heading": "目立つTシャツを着て入室",
+      "big": "約半数",
+      "label": "気づかれると予想\n→ 実際に気づいたのは\nそれよりずっと少数",
+      "note": "Gilovich, Medvec & Savitsky, 2000"
+    },
+    {
+      "type": "body",
+      "heading": "Tシャツの実験",
+      "body": "コーネル大学の実験で、学生に少し恥ずかしいTシャツを着て部屋に入ってもらいました。本人は「約半数が気づく」と予想。でも実際に気づいた人は、2〜3割ほどでした。",
+      "note": "Journal of Personality and Social Psychology, 2000"
+    },
+    {
+      "type": "body",
+      "heading": "なぜ起きるのか",
+      "body": "私たちは自分のことを一番よく見ているので、他の人も同じくらい自分を見ていると思いがち。でも周りの人も、自分のことで頭がいっぱいなんです。"
+    },
+    {
+      "type": "body",
+      "heading": "対処法① 数字で考える",
+      "body": "「みんなに見られた」と思ったら「実際に気づいたのは多くて数人かも」と言い直してみる。思い込みの大きさに気づけます。"
+    },
+    {
+      "type": "body",
+      "heading": "対処法② 相手の立場で",
+      "body": "昨日、同僚の服装や小さなミスを覚えていますか？ほとんど覚えていないはず。相手もあなたに対して同じです。"
+    },
+    {
+      "type": "cta",
+      "title": "当てはまる人に\n送ってあげて",
+      "body": "職場と人間関係の「なぜ？」を\n毎日20時に心理学で解説中"
+    }
+  ],
+  "caption": "人の目が気になりすぎるのは「スポットライト効果」かもしれません。\n\n恥ずかしいTシャツを着た実験では、本人は「約半数が気づく」と予想。\n実際に気づいたのは、それよりずっと少ない人数でした。\n\nみんな、思っているほど他人を見ていません。\n\n気にしすぎな友だちに送ってあげてください。",
+  "hashtags": [
+    "#心理学",
+    "#スポットライト効果",
+    "#人の目が気になる",
+    "#認知バイアス",
+    "#メンタルケア"
+  ],
+  "alt_text": "人の目が気になる理由を、コーネル大学のTシャツ実験とスポットライト効果で解説。本人は約半数が気づくと予想したが、実際に気づいたのは2〜3割ほど。対処法は数字で考えることと相手の立場で考えること。",
+  "sources": [
+    "https://www.psychologytoday.com/us/blog/between-you-and-me/201311/have-you-fallen-prey-to-the-spotlight-effect",
+    "https://cornellalumnimagazine.com/things-that-make-you-go-hmm",
+    "Gilovich, T., Medvec, V. H., & Savitsky, K. (2000). Journal of Personality and Social Psychology, 78(2), 211–222."
+  ],
+  "is_pr": false,
+  "ai_label_required": false,
+  "compliance": {
+    "status": "approved",
+    "notes": "実測値はソースにより約20〜25%と幅があるため『2〜3割ほど』と幅で表記し、dataスライドは定性的表現にした。メンタル不調の扱いではないため専門家相談の一文は不要と判断。"
+  },
+  "status": "ready",
+  "published": {
+    "media_id": null,
+    "at": null,
+    "permalink": null
+  }
+}

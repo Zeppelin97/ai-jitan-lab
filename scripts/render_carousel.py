@@ -122,6 +122,31 @@ def render_body(s, idx, total):
         d.rounded_rectangle([M, y, W - M, y + box_h], radius=24, fill="#FFFFFF", outline="#E2DED6", width=3)
         d.text((M + 40, y + 26), "コピペOK", font=font(FB, 30), fill=D["accent"])
         draw_lines(d, code, code_f, M + 40, y + 80, D["text"], 1.5)
+    draw_note(d, s)
+    footer(d, idx, total)
+    return img
+
+
+def draw_note(d, s):
+    """出典などの小さな注記を、フッターの上に表示する。"""
+    if s.get("note"):
+        f = font(FR, 28)
+        d.text((M, H - 150), "出典: " + s["note"], font=f, fill=D["sub"])
+
+
+def render_data(s, idx, total):
+    """実験結果の数字を大きく見せるスライド。"""
+    img = Image.new("RGB", (W, H), D["bg"])
+    d = ImageDraw.Draw(img)
+    if s.get("heading"):
+        hf = font(FB, 48)
+        draw_lines(d, wrap(d, s["heading"], hf, W - 2 * M), hf, M, 200, D["sub"], 1.3, center=True)
+    big_f = font(FB, 260)
+    tw = d.textlength(s["big"], font=big_f)
+    d.text(((W - tw) / 2, 380), s["big"], font=big_f, fill=D["accent"])
+    lf = font(FB, 52)
+    draw_lines(d, wrap(d, s.get("label", ""), lf, W - 2 * M), lf, M, 760, D["text"], 1.45, center=True)
+    draw_note(d, s)
     footer(d, idx, total)
     return img
 
@@ -145,7 +170,7 @@ def render_cta(s, idx, total):
     return img
 
 
-RENDER = {"cover": render_cover, "body": render_body, "cta": render_cta}
+RENDER = {"cover": render_cover, "body": render_body, "data": render_data, "cta": render_cta}
 
 
 def render(post_dir: Path):
