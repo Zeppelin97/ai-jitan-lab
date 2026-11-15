@@ -26,6 +26,7 @@ jobs:
 
       # AI社員たちがネタ補充・原稿・審査・画像化を行う（公開はしない）
       - name: AI company - produce content
+        continue-on-error: true   # ここが失敗しても、作成済みの投稿の公開は止めない
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -36,6 +37,9 @@ jobs:
           claude_args: >-
             --max-turns 60
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Task,Bash(python3 scripts/*)"
+
+      - name: Wait for VOICEVOX
+        run: for i in $(seq 1 60); do curl -sf localhost:50021/version && break; sleep 2; done
 
       - name: Render any un-rendered approved posts (carousel / reel)
         run: |
