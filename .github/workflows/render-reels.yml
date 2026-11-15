@@ -5,7 +5,7 @@ on:
     inputs:
       force:
         description: "既存の reel.mp4 も作り直す"
-        default: "true"
+        default: "false"
 permissions:
   contents: write
 concurrency: instagram-ops
@@ -36,12 +36,23 @@ jobs:
               ffmpeg -v error -y -i "$d/reel.mp4" -vf "fps=1/3,scale=270:-1,tile=8x1" -frames:v 1 "$d/reel-frames.png"
             fi
           done
+      - name: Render what-if experiments
+        run: |
+          for f in scripts/whatif/*.py; do
+            name=$(basename "$f" .py)
+            out=$(ls -d content/experiments/*-"${name//_/-}" 2>/dev/null | head -1)
+            [ -n "$out" ] || continue
+            python3 "$f" "$out"
+            ffprobe -v error -show_entries format=duration -of compact "$out/reel.mp4"
+            ffmpeg -v error -y -i "$out/reel.mp4" -vf "fps=1/3,scale=270:-1,tile=12x1" -frames:v 1 "$out/reel-frames.png"
+          done
       - uses: actions/upload-artifact@v4
         with:
           name: reels
           path: |
             content/queue/*/reel.mp4
             content/queue/*/reel-frames.png
+            content/experiments/*/reel.mp4
       - name: Commit
         run: |
           git config user.name "autogram-bot"
