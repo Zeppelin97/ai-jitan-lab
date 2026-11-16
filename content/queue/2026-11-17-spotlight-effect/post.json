@@ -68,11 +68,11 @@
     "status": "approved",
     "notes": "実測値はソースにより約20〜25%と幅があるため『2〜3割ほど』と幅で表記し、dataスライドは定性的表現にした。メンタル不調の扱いではないため専門家相談の一文は不要と判断。"
   },
-  "status": "ready",
+  "status": "published",
   "published": {
-    "media_id": null,
-    "at": null,
-    "permalink": null
+    "media_id": "18657863251052740",
+    "at": "2026-11-17T06:01:59.138720+09:00",
+    "permalink": "https://www.instagram.com/reel/Df0RgyKDOzR/"
   },
   "format": "reel",
   "reel": {
