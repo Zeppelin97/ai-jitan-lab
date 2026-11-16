@@ -70,11 +70,11 @@
     "status": "approved",
     "notes": "93/85/49%はMoede(1927)によるRingelmannの報告として複数ソースで一致。出典表記もその旨にした。Latané(1979)は定性的な記述のみ。診断・レッテル貼りなし。"
   },
-  "status": "ready",
+  "status": "published",
   "published": {
-    "media_id": null,
-    "at": null,
-    "permalink": null
+    "media_id": "18322397557304487",
+    "at": "2026-11-16T22:52:18.866557+09:00",
+    "permalink": "https://www.instagram.com/reel/DfzgVfujLlk/"
   },
   "format": "reel",
   "reel": {
