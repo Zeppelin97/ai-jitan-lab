@@ -26,6 +26,13 @@
 - [ ] 2d（プロフィールリンク登録）を今夜 20:00 の初投稿までに済ませてください。リンクのクリック数はこれが済むまで計測できません
 - [ ] 2e（アフィリエイト登録）は急ぎではありません。PR・本紹介の投稿は 11/27 まで出さない方針です（実験1の比較を優先するため）
 
+## 2026-11-17 朝の報告からのお願い（急ぎ）
+- [ ] **投稿の数値（インサイト）が取れていません。** 取得時に `(#10) Application does not have permission`（権限なし）のエラー。いまのトークンに `instagram_business_manage_insights` 権限が含まれていないためです
+      1. Meta 開発者画面 → アプリ jitan-lab-publisher → Instagram のユースケース → 権限に `instagram_business_manage_insights` を追加
+      2. 「トークンを生成」で新しいトークンを作り直す（チャットには貼らない）
+      3. GitHub の Settings → Secrets and variables → Actions で `IG_ACCESS_TOKEN` を新しいトークンに更新
+      4. Actions タブ → morning-check → Run workflow で確認（ログに `skip` が出なければ成功）
+
 ## 継続（週5分）
 - [ ] 毎週月曜: strategy/weekly-report.md と このファイルを確認
 - [ ] PR案件のDMが来たら受けるか判断（受けたら is_pr=true で依頼）
