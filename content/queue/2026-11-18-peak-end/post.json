@@ -68,11 +68,11 @@
     "status": "approved",
     "notes": "正確な割合は未確認のため『多数派』『多くの参加者』と定性的に表記。実験条件（14℃60秒／+15℃30秒）は原著抄録と一致。"
   },
-  "status": "ready",
+  "status": "published",
   "published": {
-    "media_id": null,
-    "at": null,
-    "permalink": null
+    "media_id": "17911503750596891",
+    "at": "2026-11-17T20:15:02.198938+09:00",
+    "permalink": "https://www.instagram.com/reel/Df1zIUlEThz/"
   },
   "format": "reel",
   "reel": {
