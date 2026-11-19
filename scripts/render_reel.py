@@ -175,7 +175,10 @@ def frame(s, t, dur, t_total, total):
         else:
             big = s["big"]
         tw = d.textlength(big, font=bf)
-        d.text(((W - tw) / 2, 620), big, font=bf, fill=blend(D["bg"], D["accent"], a_in))
+        if tw > W - 2 * M:  # 「140%超」など横幅が画面を超える場合だけ縮める
+            bf = font(FB, int(300 * (W - 2 * M) / tw))
+            tw = d.textlength(big, font=bf)
+        d.text(((W - tw) / 2, 620 + (300 - bf.size) // 2), big, font=bf, fill=blend(D["bg"], D["accent"], a_in))
         lf = font(FB, 60)
         centered_block(d, wrap(d, s["text"], lf, W - 2 * M), lf, 1030,
                        lambda i: blend(D["bg"], D["text"], ease((t - 0.7 - i * 0.15) / 0.3)))

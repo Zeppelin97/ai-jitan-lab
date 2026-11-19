@@ -114,6 +114,14 @@ def render_body(s, idx, total):
     total_h = (len(head) * int(head_f.size * 1.3) + 56 + len(body) * int(body_f.size * 1.6)
                + (48 + box_h if code else 0))
     y = max(150, (H - 120 - total_h) // 2)  # 縦方向センタリング（フッター分を除く）
+    # 出典（H-150）に重なる場合だけ、上余白を詰めて本文を少しずつ小さくする
+    limit = H - 170
+    while y + total_h > limit and body_f.size > 40:
+        body_f = font(FR, body_f.size - 2)
+        body = wrap(d, s.get("body", ""), body_f, W - 2 * M)
+        total_h = (len(head) * int(head_f.size * 1.3) + 56 + len(body) * int(body_f.size * 1.6)
+                   + (48 + box_h if code else 0))
+        y = max(110, (H - 120 - total_h) // 2)
     d.rectangle([M, y + 10, M + 14, y + 76], fill=D["accent"])
     y = draw_lines(d, head, head_f, M + 40, y, D["text"], 1.3) + 56
     y = draw_lines(d, body, body_f, M, y, D["text"], 1.6)
@@ -143,7 +151,10 @@ def render_data(s, idx, total):
         draw_lines(d, wrap(d, s["heading"], hf, W - 2 * M), hf, M, 200, D["sub"], 1.3, center=True)
     big_f = font(FB, 260)
     tw = d.textlength(s["big"], font=big_f)
-    d.text(((W - tw) / 2, 380), s["big"], font=big_f, fill=D["accent"])
+    if tw > W - 2 * M:  # 左右の余白を割る長さの場合だけ縮める
+        big_f = font(FB, int(260 * (W - 2 * M) / tw))
+        tw = d.textlength(s["big"], font=big_f)
+    d.text(((W - tw) / 2, 380 + (260 - big_f.size) // 2), s["big"], font=big_f, fill=D["accent"])
     lf = font(FB, 52)
     draw_lines(d, wrap(d, s.get("label", ""), lf, W - 2 * M), lf, M, 760, D["text"], 1.45, center=True)
     draw_note(d, s)
