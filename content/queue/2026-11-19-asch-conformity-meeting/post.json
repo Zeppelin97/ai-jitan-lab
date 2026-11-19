@@ -75,11 +75,11 @@
     "status": "approved",
     "notes": "2026-11-17 審査。事実確認: Asch (1956) Psychological Monographs 70(9) doi:10.1037/h0093718 = 米国の男子大学生123人、critical trials の回答のうち多数派の誤答に合わせた割合 36.8%、統制群(一人)の誤答1%未満、約4分の1は一度も同調せず、筆記回答・味方1人の条件で同調が減少 — いずれも一致。Franzen & Mader (2023) PLOS ONE doi:10.1371/journal.pone.0294325 = スイス・ベルン大学の学生、標準条件の誤答率33% — 一致（論文要旨で確認）。Asch (1955) Sci Am doi:10.1038/scientificamerican1155-31、Griggs (2015) Teaching of Psychology 42(2)137-142 も書誌一致。修正: 36.8%は1/3(33.3%)より大きいため cover title・reel hook の text を『約3回に1回は』に変更、hook の say を『回答の約3回に1回は』として人数(3人に1人)と誤読されないようにした（exp1-hook variant C の文言が微修正された点に留意）。誇張・決めつけ（『証明』『日本人は』『意志が弱い』『嫌われたくないから』）なし。理由は『人それぞれと考えられています』とぼかし済み。限界（大学生・単純課題・職場では未検証）はキャプションと slide 6 に明記。応用（先に書いてもらう・1人目の味方・後で個別に伝える）は『一案』として研究結果と区別されている。reel text シーンの note (Asch, 1956) は同調の理由（Asch の事後面接）と筆記・味方条件に対応しており妥当。診断・レッテル・特定属性への攻撃なし。メンタル不調を主題とする投稿ではないため専門家相談文は不要と判断。is_pr=false で PR 表記不要。他者の著作物・キャラクター不使用。スライド8枚、body最大85字・code約45字、ハッシュタグ5個で schema 内。"
   },
-  "status": "ready",
+  "status": "published",
   "published": {
-    "media_id": null,
-    "at": null,
-    "permalink": null
+    "media_id": "18109586432199733",
+    "at": "2026-11-19T20:11:08.590969+09:00",
+    "permalink": "https://www.instagram.com/reel/Df68R6uAFA3/"
   },
   "reel": {
     "scenes": [
