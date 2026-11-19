@@ -1,5 +1,11 @@
 # 運用ログ（新しい順）
 
+## 2026-11-19
+- キュー確認: 未公開 3本（11/19 asch-conformity-meeting・11/20 liking-gap・11/21 planning-fallacy、すべて ready・approved・画像/リール生成済み）。queue_buffer=3 を満たしているため新規作成・審査・画像化はなし
+- 審査: 新規案件なし（既存3本は approved 済みのまま）
+- 公開: 本ステップではスキップ。公開はワークフローの次のステップで行う（本日分は 11/19 asch-conformity-meeting）
+- 次回補充: asch-conformity-meeting 公開後にキューが2本になるため、次回の実行で 11/22 分（公開順表の 11/23 枠＝型A・職場）を作成する
+
 ## 2026-11-18（2回目の実行）
 - キュー確認: 11/18 ask-for-help は公開済み。未公開は 2本（11/19 asch-conformity-meeting・11/20 liking-gap）で、queue_buffer=3 に1本足りないため補充
 - 作成: 11/21 `planning-fallacy`（型C：意外な数字型・認知バイアス。1日前倒しにより公開順表の 11/22 枠）。表紙「最悪の想定でも間に合ったのは半分以下」＝計画錯誤（Buehler, Griffin & Ross 1994 Study 1：卒論の学生37人、最悪予測日までの提出 48.7%、ベスト予測 33.9日→実際 55.5日）。対処法は過去の実績を今回に結びつける・同僚の予測と並べる・逆算計画（Wiese et al. 2016）
