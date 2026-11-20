@@ -63,7 +63,8 @@ def main():
     acc = rows("data/account_daily.csv")
     followers = num(acc[-1]["followers_count"]) if acc else 0
     ps = posts()
-    published = [p for p in ps if p.get("status") == "published"]
+    published = sorted((p for p in ps if p.get("status") == "published"),
+                       key=lambda p: (p.get("published") or {}).get("at") or "")  # フォルダ名ではなく公開時刻順
     ins = latest_insights()
     recent = [ins[p["id"]] for p in published[-7:] if p["id"] in ins]
     share_rates = [x for x in (rate(r, "shares") for r in recent) if x is not None]
