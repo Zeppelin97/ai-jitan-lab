@@ -1,5 +1,11 @@
 # 運用ログ（新しい順）
 
+## 2026-11-21
+- キュー確認: 未公開 3本（11/21 planning-fallacy［型C］・11/22 overclaiming［型A］・11/23 illusion-of-transparency［型B］。すべて ready・approved・スライド8枚/リール生成済み）。queue_buffer=3 を満たしているため新規作成・審査・画像化はなし
+- 審査: 新規案件なし（既存3本は approved 済みのまま）
+- 公開: 本ステップではスキップ。公開はワークフローの次のステップで行う（本日分は 11/21 planning-fallacy）
+- 次回補充: planning-fallacy 公開後にキューが2本になるため、次回の実行で 11/24 分（公開順表の 11/25 枠＝型C・人間関係）を作成する
+
 ## 2026-11-20（2回目の実行）
 - キュー確認: 11/20 liking-gap は公開済み。未公開は 2本（11/21 planning-fallacy・11/22 overclaiming）で、queue_buffer=3 に1本足りないため補充
 - 作成: 11/23 `illusion-of-transparency`（型B：共通点型・認知バイアス。1日前倒しにより公開順表の 11/24 枠）。表紙「緊張がバレてると思う人の共通点」＝透明性の錯覚（Savitsky & Gilovich 2003 JESP、背景に Gilovich, Savitsky & Medvec 1998）。数字は原著で確認できなかったため使っていない（big は「錯覚」）。11/17 のスポットライト効果と同じ研究グループなので、「内面がどれだけ外に漏れるか」の切り口で区別した
