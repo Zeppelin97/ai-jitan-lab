@@ -74,11 +74,11 @@
     "status": "approved",
     "notes": "2026-11-18 審査。原著PDF（JPSP 67(3) 366-381）で照合: Study 1 = ウォータールー大学（カナダ）心理学専攻37人の卒論。ベスト予測33.9日・実際55.5日（Table 1注: 平均は提出した33人）、ベスト予測日までの提出29.7%、最悪予測日までの提出48.7%（論文本文 'fewer than half'）、最悪予測48.6日との差は ns だが本文は割合のみで言及しており適切。74%/7%は Study 3（78人、うち音声が聞き取れた67人、2週間以内の授業課題）の値で卒論の学生ではないため、slide5・キャプション・リールscene3に『別の実験』を明記する修正をした。74%は future plans .71 + future problems .03 の合計のため slide5 は『これから先のこと』に変更。Study 4: 過去を今回に結びつけた条件で楽観的なバイアスが消えた（精度は上がらず）と一致、精度向上とは書いていない。Study 5: 観察者の予測は本人より慎重で、悲観的な方向に外れた点も括弧で明記しており一致。Wiese, Buehler & Griffin (2016) JDM 11(2) 147-167: 逆算計画で予測が長くなった（Studies 1-4）と一致、『研究も』でヘッジ済み。Kahneman & Tversky (1979) TIMS Studies in Management Science, 12, 313-327 は原著の参考文献リストと一致。職場への拡張は『起きやすい』とたとえで書かれており、レッテル貼り・断定表現なし。メンタル不調を扱わないため相談先の一文は不要。is_pr=false。body はすべて全角90字以内（最大で slide7 の約82字）、code 120字以内、リール読み上げは合計約225字でおおむね適正。"
   },
-  "status": "ready",
+  "status": "published",
   "published": {
-    "media_id": null,
-    "at": null,
-    "permalink": null
+    "media_id": "18151622140486162",
+    "at": "2026-11-21T20:06:27.741159+09:00",
+    "permalink": "https://www.instagram.com/reel/DgAFVg9FacF/"
   },
   "reel": {
     "scenes": [
