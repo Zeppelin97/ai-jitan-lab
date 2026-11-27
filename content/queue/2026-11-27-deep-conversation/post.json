@@ -122,7 +122,9 @@
         "sub": "人間関係の「なぜ？」を\n毎日20時に心理学で解説",
         "say": "当てはまる人に、送ってあげてね。"
       }
-    ]
+    ],
+    "engine": "voicevox",
+    "duration_sec": 27.6
   },
   "experiment": {
     "id": "exp1-hook",
