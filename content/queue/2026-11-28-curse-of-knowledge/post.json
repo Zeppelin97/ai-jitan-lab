@@ -125,7 +125,8 @@
         "say": "当てはまる人に、送ってあげてね。"
       }
     ],
-    "engine": "voicevox"
+    "engine": "voicevox",
+    "duration_sec": 33.0
   },
   "experiment": {
     "id": "exp1-hook",
